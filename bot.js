@@ -17,7 +17,8 @@ bot.on('ready', function (event) {
 bot.on('message', async msg => {
     if (msg.content.startsWith('/')) {
         try {
-            console.log(`Slash number ${++count}`)
+            var user = new Discord.User()
+            console.log(`Slash number ${++count} for user: ${}`)
             return msg.reply(`Okay. it Works!`)
         } catch (error) {
             return msg.reply(`Error: ${error}`)
@@ -25,4 +26,13 @@ bot.on('message', async msg => {
     }
 })
 
-//test
+const clientId = "994954172879343626"
+var discord = new Discord.Discord(clientId, Discord.CreateFlags.Default)
+var userManager = discord.GetUserManager()
+userManager.OnCurrentUserUpdate += () => {
+    var currentUser = userManager.GetCurrentUser()
+    console.log(currentUser.Username)
+    console.log(currentUser.Id)
+    console.log(currentUser.Discriminator)
+    console.log(currentUser.Avatar)
+}
