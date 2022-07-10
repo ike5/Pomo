@@ -4,11 +4,13 @@
   "description": "A pomodoro timer",
   "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js"
   },
   "author": "Ike Maldonado",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^13.8.1"
+    "discord.js": "^12.5.3",
+    "dotenv": "^16.0.1"
   }
 }
