@@ -24,3 +24,5 @@ bot.on('message', async msg => {
         }
     }
 })
+
+//test
